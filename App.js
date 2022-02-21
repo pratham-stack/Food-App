@@ -7,8 +7,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FirstScreen from './screen/FirstScreen';
 import SecondScreen from './screen/SecondScreen';
 
-import Header from './components/header';
-
 const Stack = createNativeStackNavigator();
 // function HomeScreen({ navigation }) {
 //   return (
@@ -27,10 +25,10 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Hungry?'
       screenOptions={{
-          headerShown: false,
-          title: 'Overview'
+          headerShown: true,
+          title: 'Order'
           }}>
-        <Stack.Screen name="Hungry?" component={FirstScreen} />
+        <Stack.Screen name="Hungry?" component={FirstScreen} options={{ title: 'Food List' }}/>
         <Stack.Screen name="Detail" component={SecondScreen} />
       </Stack.Navigator>
     </NavigationContainer>
